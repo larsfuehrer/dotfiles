@@ -3,4 +3,22 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
+  d_vim:
+    dst: ~/.vim/
+    src: .vim
+  d_zsh:
+    dst: ~/.zsh/
+    src: .zsh
+  f_vimrc:
+    dst: ~/.vimrc
+    src: .vimrc
+  f_zshrc:
+    dst: ~/.zshrc
+    src: .zshrc
 profiles:
+  w0avs:
+    dotfiles:
+    - d_vim
+    - d_zsh
+    - f_vimrc
+    - f_zshrc
