@@ -7,8 +7,8 @@ dotfiles:
     dst: ~/.vim/
     src: .vim
   d_zsh:
-    dst: ~/.zsh/
-    src: .zsh
+    dst: ~/.oh-my-zsh/
+    src: .oh-my-zsh
   f_vimrc:
     dst: ~/.vimrc
     src: .vimrc
@@ -19,6 +19,6 @@ profiles:
   w0avs:
     dotfiles:
     - d_vim
-    - d_zsh
+    - d_oh-my-zsh
     - f_vimrc
     - f_zshrc
