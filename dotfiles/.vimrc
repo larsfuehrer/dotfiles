@@ -9,6 +9,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -55,14 +59,12 @@ syntax enable
 set linebreak breakindent
 set list listchars=tab:>>,trail:~
 
-" midnight, night, or day
-let g:jinx_colors = 'midnight'
+" solarized theme
+set background=dark
+colorscheme solarized
 
-try
-    colorscheme jinx
-catch
-    colorscheme slate
-endtry
+" airline theme
+let g:airline_theme='solarized'
 
 if $TERM !=? 'linux'
     set termguicolors

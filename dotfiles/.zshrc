@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+#
 eval $(keychain --eval --quiet --confhost --agents ssh,gpg)
 
 export PATH=/home/lars/.local/bin:$PATH
