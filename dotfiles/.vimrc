@@ -1,4 +1,18 @@
-" Sane vim defaults for ArchLabs
+set nocompatible
+filetype off
+
+" ------ begin Vundle ------
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+
+call vundle#end()
+filetype plugin indent on
+" ------ end Vundle ------
 
 " Arch defaults
 runtime! archlinux.vim
