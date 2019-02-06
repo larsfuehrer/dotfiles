@@ -42,52 +42,11 @@ let g:netrw_browse_split = 3
 let g:mapleader = "\<Space>"
 let g:airline_theme='solarized'
 
-" ------ enable additional features ------
-
-" enable mouse
-set mouse=a
-if has('mouse_sgr')
-    " sgr mouse is better but not every term supports it
-    set ttymouse=sgr
-endif
-
-if $TERM !=? 'linux'
-    set termguicolors
-
-    " true colors in terminals (neovim doesn't need this)
-    if !has('nvim') && !($TERM =~? 'xterm' || &term =~? 'xterm')
-        let $TERM = 'xterm-256color'
-        let &term = 'xterm-256color'
-    endif
-
-    if has('multi_byte') && $TERM !=? 'linux'
-        set listchars=tab:»»,trail:•
-        set fillchars=vert:┃ showbreak=↪
-    endif
-endif
-
-" change cursor shape for different editing modes, neovim does this by default
-if !has('nvim')
-    if exists('$TMUX')
-        let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
-        let &t_SR = "\<Esc>Ptmux;\<Esc>\e[4 q\<Esc>\\"
-        let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
-    else
-        let &t_SI = "\e[6 q"
-        let &t_SR = "\e[4 q"
-        let &t_EI = "\e[2 q"
-    endif
-endif
-
-" ------ commands ------
-
 command! D Explore
 command! R call <SID>ranger()
 command! Q call <SID>quitbuffer()
 command! -nargs=1 B :call <SID>bufferselect("<args>")
 command! W execute 'silent w !sudo tee % >/dev/null' | edit!
-
-" ------ basic maps ------
 
 " open ranger as a file chooser using the function below
 nnoremap <leader>r :call <SID>ranger()<CR>
