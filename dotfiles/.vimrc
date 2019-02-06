@@ -1,30 +1,27 @@
-set nocompatible
-filetype off
-
 " ------ begin Vundle ------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
+Plugin 'scrooloose/nerdtree'
+Plugin 'valloric/youcompleteme'
 
 call vundle#end()
 filetype plugin indent on
 " ------ end Vundle ------
 
-" Arch defaults
-runtime! archlinux.vim
+filetype off
+colorscheme solarized
+syntax enable
 
-" system clipboard (requires +clipboard)
 set clipboard^=unnamed,unnamedplus
-
-" additional settings
+set nocompatible
+set background=dark
 set modeline           " enable vim modelines
 set hlsearch           " highlight search items
 set incsearch          " searches are performed as you type
@@ -35,14 +32,14 @@ set expandtab          " Tab key inserts spaces not tabs
 set softtabstop=4      " spaces to enter for each tab
 set shiftwidth=4       " amount of spaces for indentation
 set shortmess+=aAcIws  " Hide or shorten certain messages
+set linebreak breakindent
+set list listchars=tab:>>,trail:~
 
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 3
-
-" ------ leader mapping ------
-
 let g:mapleader = "\<Space>"
+let g:airline_theme='solarized'
 
 " ------ enable additional features ------
 
@@ -52,19 +49,6 @@ if has('mouse_sgr')
     " sgr mouse is better but not every term supports it
     set ttymouse=sgr
 endif
-
-" syntax highlighting
-syntax enable
-
-set linebreak breakindent
-set list listchars=tab:>>,trail:~
-
-" solarized theme
-set background=dark
-colorscheme solarized
-
-" airline theme
-let g:airline_theme='solarized'
 
 if $TERM !=? 'linux'
     set termguicolors
