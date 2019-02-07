@@ -3,6 +3,9 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
+  d_config:
+    dst: ~/.config/
+    src: .config
   d_vim:
     dst: ~/.vim/
     src: .vim
@@ -18,6 +21,7 @@ dotfiles:
 profiles:
   w0avs:
     dotfiles:
+    - d_config
     - d_vim
     - d_oh-my-zsh
     - f_vimrc
