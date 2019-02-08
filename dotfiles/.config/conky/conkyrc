@@ -21,7 +21,6 @@ minimum_height = 200,
 minimum_width = 240,
 maximum_width = 240,
 
-
 --Graphical
 border_inner_margin = 10,
 border_outer_margin = 2,
@@ -72,6 +71,8 @@ color1 = '#a4a4a4',
 };
 
 conky.text = [[
+${color1}${texeci 1800 curl -s wttr.in | sed -n '3,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
+
 ${color1}${alignc}S Y S T E M    I N F O
 ${hr}
 Host:${alignr}${nodename}
