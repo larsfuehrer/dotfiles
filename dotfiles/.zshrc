@@ -7,15 +7,16 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 plugins=(
-    git
     archlinux
     docker
+    doctl
+    fuck
+    fzf
+    gitfast
     helm
     kubectl
     terraform
     tmux
-    fuck
-    fzf
     )
 
 source $ZSH/oh-my-zsh.sh
