@@ -15,6 +15,7 @@ plugins=(
     terraform
     tmux
     fuck
+    fzf
     )
 
 source $ZSH/oh-my-zsh.sh
