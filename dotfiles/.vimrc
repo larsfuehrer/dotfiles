@@ -11,6 +11,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'valloric/youcompleteme'
 Plugin 'fatih/vim-go'
+Plugin 'klen/python-mode'
 
 call vundle#end()
 filetype plugin indent on
