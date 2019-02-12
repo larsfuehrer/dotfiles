@@ -9,7 +9,7 @@ dotfiles:
   d_vim:
     dst: ~/.vim/
     src: .vim
-  d_zsh:
+  d_oh-my-zsh:
     dst: ~/.oh-my-zsh/
     src: .oh-my-zsh
   f_vimrc:
