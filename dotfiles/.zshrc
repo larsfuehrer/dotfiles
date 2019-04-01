@@ -1,6 +1,3 @@
-# 256 color
-#export TERM="xterm-256color"
-
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
