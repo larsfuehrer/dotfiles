@@ -33,10 +33,10 @@ default_graph_height = 40,
 default_graph_width = 153,
 default_shade_color = '#1c2023',
 default_outline_color = '#1c2023',
-draw_borders = true,
+draw_borders = false,
 draw_graph_borders = true,
-draw_shades = true,
-draw_outline = true,
+draw_shades = false,
+draw_outline = false,
 
 --Textual
 extra_newline = false,
@@ -73,33 +73,46 @@ color1 = '#a4a4a4',
 conky.text = [[
 ${color1}${texeci 1800 curl -s wttr.in | sed -n '3,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
 
-${color1}${alignc}S Y S T E M    I N F O
+${color1}${alignc}SYSTEM INFO
 ${hr}
 Host:${alignr}${nodename}
 Uptime:${alignr}${uptime}
-UTC:${alignr}${utime %H:%M}
 
 ${goto 60}Used${alignr}Size
-Root${goto 60}${fs_used /}${alignr}${fs_size /}
-Home${goto 60}${fs_used /home}${alignr}${fs_size /home}
+/${goto 60}${fs_used /}${alignr}${fs_size /}
+#Home${goto 60}${fs_used /home}${alignr}${fs_size /home}
 
 ${goto 60}MEM${alignr}MAX
 RAM${goto 60}${mem}${alignr}${memmax}
-Swap${goto 60}${swap}${alignr}${swapmax}
+#Swap${goto 60}${swap}${alignr}${swapmax}
 
 CPU:${goto 60}Used${alignr}GHz
 Avg${goto 60}${cpu cpu0}%${alignr}${freq_g}
 
-${alignc}S H O R T C U T    K E Y S
+${alignc}TMUX SHORTCUTS
 ${hr}
-[S]${alignr}Launcher
-[S] + Space${alignr}Oenbox Menu
-[S] + t${alignr}Terminal
-[S] + e${alignr}Text Editor
-[S] + f${alignr}File Manager
-[S] + w${alignr}Web Browser
-[S] + m${alignr}Music Player
-[S] + v${alignr}Audio Control
-[S] + x${alignr}System Exit
-[PrtScn]${alignr}Screenshot
+Windows (tabs)
+[Ctrl+A+c]${alignr}create window
+[Ctrl+A+w]${alignr}list windows
+[Ctrl+A+n]${alignr}next window
+[Ctrl+A+p]${alignr}previous window
+[Ctrl+A+f]${alignr}find window
+[Ctrl+A+,]${alignr}name window
+[Ctrl+A+C]${alignr}kill window
+Panes (splits)
+[Ctrl+A+v]${alignr}vertical split
+[Ctrl+A+h]${alignr}horizontal split
+[Ctrl+A+o]${alignr}swap panes
+[Ctrl+A+c]${alignr}kill pane
+Misc
+[Ctrl+A+:]${alignr}prompt
+[Ctrl+A+d]${alignr}detach
+[Ctrl+A+?]${alignr}list shortcuts
+
+${alignc}VIM SHORTCUTS
+${hr}
+
+
+
+
 ]];
