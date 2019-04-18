@@ -2,7 +2,6 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
@@ -12,7 +11,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'valloric/youcompleteme'
 Plugin 'fatih/vim-go'
 Plugin 'klen/python-mode'
-
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 call vundle#end()
 filetype plugin indent on
 " ------ end Vundle ------
