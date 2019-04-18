@@ -14,6 +14,15 @@ dotfiles:
   d_oh-my-zsh:
     dst: ~/.oh-my-zsh/
     src: .oh-my-zsh
+  d_tmuxinator:
+    dst: ~/.tmuxinator
+    src: .tmuxinator
+  d_tmux:
+    dst: ~/.tmux
+    src: .tmux
+  f_tmux_conf:
+    dst: ~/.tmux.conf
+    src: .tmux.conf
   f_vimrc:
     dst: ~/.vimrc
     src: .vimrc
@@ -26,5 +35,8 @@ profiles:
     - d_config
     - d_vim
     - d_oh-my-zsh
+    - d_tmuxinator
+    - d_tmux
+    - f_tmux_conf
     - f_vimrc
     - f_zshrc
