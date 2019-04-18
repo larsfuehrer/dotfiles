@@ -1,3 +1,6 @@
+# 256 color
+#export TERM="xterm-256color"
+
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -7,7 +10,19 @@ ZSH_TMUX_AUTOSTART=true
 # Uncomment the following line to enable command auto-correction.
 #ENABLE_CORRECTION="false"
 
-plugins=(tmux tmuxinator git docker fuck fzf helm kubectl terraform oc)
+plugins=(
+  tmux 
+  tmuxinator 
+  git 
+  docker 
+  fzf 
+  helm 
+  kubectl 
+  kube-ps1
+  terraform 
+  oc 
+  wd
+  doctl)
 
 source $ZSH/oh-my-zsh.sh
 
