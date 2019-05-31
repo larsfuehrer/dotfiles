@@ -98,7 +98,7 @@ Windows (tabs)
 [Ctrl+A+p]${alignr}previous window
 [Ctrl+A+f]${alignr}find window
 [Ctrl+A+,]${alignr}name window
-[Ctrl+A+C]${alignr}kill window
+[Ctrl+A+k]${alignr}kill window
 Panes (splits)
 [Ctrl+A+v]${alignr}vertical split
 [Ctrl+A+h]${alignr}horizontal split
