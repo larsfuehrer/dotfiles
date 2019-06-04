@@ -1,51 +1,68 @@
-# 256 color
-#export TERM="xterm-256color"
+#########
+# ZPLUG #
+#########
+local ZPLUG_DIR="$HOME/.zplug"
 
+if [[ ! -d ~/.zplug ]] then
+    git clone https://github.com/zplug/zplug $ZPLUG_DIR
+fi
+
+source $ZPLUG_DIR/init.zsh
+
+
+############
+# Settings #
+############
 DEFAULT_USER=$(whoami)
+CASE_SENSITIVE="true"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_TITLE="true"
 
-export ZSH=$HOME/.oh-my-zsh
 
+#########
+# Theme #
+#########
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-ZSH_TMUX_AUTOSTART=true
 
-# Uncomment the following line to enable command auto-correction.
-#ENABLE_CORRECTION="false"
+###########
+# Plugins #
+###########
+zplug "plugins/zsh-autosuggestions", from:oh-my-zsh
+zplug "plugins/zsh-syntax-highlighting", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/kubectl", from:oh-my-zsh
+zplug "plugins/oc", from:oh-my-zsh
+zplug "plugins/doctl", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
 
-plugins=(
-  tmux 
-  tmuxinator 
-  git 
-  docker 
-  fzf 
-  helm 
-  kubectl 
-  kube-ps1
-  terraform 
-  oc 
-  wd
-  doctl)
+if ! zplug check; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
-source $ZSH/oh-my-zsh.sh
+zplug load
 
-# User configuration
+
+###########
+# Sources #
+###########
+source ~/.exports
+source ~/.aliases
+source ~/.oh-my-zsh/oh-my-zsh.sh
+source ~/.oh-my-zsh/custom/plugins/z/z.sh
+
+
+#################
+# User Settings #
+#################
 autoload -Uz compinit
 compinit
 
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
+if [ -x "$(command -v keychain)" ]; then
+    eval "$(keychain --eval --quiet id_rsa)"
+fi
 
-# default editor
-export EDITOR='vim'
-
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-#
-eval $(keychain --eval --quiet --confhost --agents ssh,gpg)
-
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
-export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
-
-eval $(thefuck --alias)
