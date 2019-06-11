@@ -22,8 +22,15 @@ DISABLE_AUTO_TITLE="true"
 #########
 # Theme #
 #########
+zplug "powerlevel9k/powerlevel9k", as:theme
+
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+
+########################
+# Powerline9k settings #
+########################
+#POWERLINE9K_RIGHT_PROMPT_ELEMENTS=(battery)
 
 ###########
 # Plugins #
@@ -46,6 +53,16 @@ fi
 
 zplug load
 
+plugins=(
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    tmux
+    git
+    fzf
+    kubectl
+    oc
+    doctl)
+
 
 ###########
 # Sources #
@@ -53,7 +70,7 @@ zplug load
 source ~/.exports
 source ~/.aliases
 source ~/.oh-my-zsh/oh-my-zsh.sh
-source ~/.oh-my-zsh/custom/plugins/z/z.sh
+#source ~/.oh-my-zsh/custom/plugins/z/z.sh
 
 
 #################
