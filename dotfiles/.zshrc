@@ -22,7 +22,7 @@ DISABLE_AUTO_TITLE="true"
 #########
 # Theme #
 #########
-zplug "powerlevel9k/powerlevel9k", as:theme
+#zplug "powerlevel9k/powerlevel9k", as:theme
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -39,10 +39,11 @@ zplug "plugins/zsh-autosuggestions", from:oh-my-zsh
 zplug "plugins/zsh-syntax-highlighting", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/oc", from:oh-my-zsh
 zplug "plugins/doctl", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/helm", from:oh-my-zsh
 
 if ! zplug check; then
     printf "Install? [y/N]: "
