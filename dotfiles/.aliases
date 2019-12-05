@@ -1,0 +1,51 @@
+# Taskwarrior
+alias t='task'
+alias ta='task add'
+alias tn='task next'
+
+# Pacman
+alias pain='sudo pacman -S'
+alias paupg='sudo pacman -Suy'
+alias pareps='sudo pacman -Ss'
+
+# YAY
+alias yain='yay -S'
+alias yaupg='yay -Suy'
+alias yareps='yay -Ss'
+
+# Shortcuts
+alias c='clear'
+alias cat='bat'
+alias g='git'
+alias e='exit'
+alias v='nvim'
+alias vim='nvim'
+alias x='i3lock-fancy'
+alias td='tree -d'
+
+# K8s
+alias kc='kubectl'
+alias kccc='kubectl config current-context'
+alias kcgc='kubectl config get-contexts'
+
+# Kubectx
+alias ksw='kubectx'
+
+# Docker
+alias ld='lazydocker'
+
+# Helm 3
+alias h3='/usr/local/bin/helm'
+
+# Helmfile
+alias helmfile_linux_amd64='hf'
+
+# Rancher CLI
+alias rc='rancher clusters'
+alias rk='rancher kubectl'
+alias rp='rancher projects'
+alias rps='rancher ps'
+alias rn='rancher nodes'
+
+# Rancher System Tools
+alias st='system-tools'
